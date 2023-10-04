@@ -2,6 +2,10 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+def clean_text(text):
+    cleaned_text = text.lower()
+    return cleaned_text
+
 @app.route('/')
 def index():
     return render_template('index.html')
